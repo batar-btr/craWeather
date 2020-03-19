@@ -1,0 +1,7 @@
+.info {
+    color: var(--main-color);
+}
+
+.blur {
+    filter: blur(4px);
+}

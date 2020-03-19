@@ -1,13 +1,18 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'Condensed';
+  src: local('Condensed'), url(./fonts/OpenSansCondensed-Light.ttf) format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --main-color: #ffa500;
+  --light: #DBC2CF;
+  --dark: #282C34;
+  --middle: #7B6D8D;
+  --middle-gray: #9FA2B2;
 }
+
+body {
+  font-family:  'Condensed';
+}
+
+

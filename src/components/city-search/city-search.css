@@ -1,0 +1,93 @@
+:root {
+    --height: 10vmin;
+}
+
+.city-search {
+    position: relative;
+    height: var(--height);
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+}
+
+.city-search form {
+    width: 40%;
+    display: flex;
+}
+
+.city-search form input, .city-search form button {
+    height: calc(var(--height) * 0.6);
+    box-sizing: border-box;
+    border: none;
+    display: block;
+}
+
+.city-search form input {
+    background-color: var(--dark);
+    color: var(--main-color);
+    width: 80%;
+    padding-left: 10%;
+    font-size: calc(var(--height) * 0.4);
+    border-radius: calc(var(--height) * 0.6) 0px 0px calc(var(--height) * 0.6);
+    outline: none;
+}
+.city-search form input:focus::placeholder {
+    color: transparent;
+}
+.city-search form button {
+    outline: none;
+    font-size: calc(var(--height) * 0.4);
+    cursor: pointer;
+    color: var(--main-color);
+    background-color: var(--middle);
+    width: 20%;
+    border-radius: 0px calc(var(--height) * 0.6) calc(var(--height) * 0.6) 0px;
+}
+
+.city-search div {
+    height: calc(var(--height)* 8);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: var(--height);
+    left: 0;
+}
+
+.city-search ul {
+    list-style: none;
+    width: 40%;
+    color: white;
+    margin: 0 auto;
+}
+
+.city-search ul li {
+    font-size: calc(var(--height) * 0.3);
+    padding: calc(var(--height)*0.1);
+    background-color: var(--dark);
+    color: var(--light);
+    border-bottom: 1px solid var(--main-color);
+    margin: 0 auto;
+    user-select: none;
+    cursor: pointer;
+}
+.city-search ul li:hover {
+    background-color: var(--middle);
+}
+
+
+
+@media screen and (orientation: portrait) {
+    :root {
+        --height: 10vmax;
+    }
+    .city-search form {
+        width: 90%;
+    }
+    .city-search ul {
+        text-align: left;
+        width: 90%;
+        margin: 0 auto;
+    }
+}

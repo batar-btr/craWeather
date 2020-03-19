@@ -18,9 +18,8 @@ export default class OpenWeather {
 
     currentWeatherByName = async name => {
         const res = await this.getResource(`weather?q=${name}`);
-        return  await res.data;
+        return  this._transformCurrentWeather(res.data);
     }
-
     currentWeatherById = async id => {
         const res = await this.getResource(`weather?id=${id}`);
         return  await res.data;
@@ -33,4 +32,15 @@ export default class OpenWeather {
         const res = await this.getResource(`forecast?id=${id}`);
         return  await res.data;
     }
+    _transformCurrentWeather = ({name, dt, main, weather, sys}) => ({
+        name: name,
+        dt: dt,
+        temp: main.temp,
+        tempMin: main.temp_min,
+        tempMax: main.temp_max,
+        feelsLike: main.feels_like,
+        sunrise:sys.sunrise,
+        sunset: sys.sunset,
+        description: weather[0].description
+    })
 }
